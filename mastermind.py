@@ -13,22 +13,30 @@ print nums
 print("Guess the 4 numbers in as few tries as possible")
 
 count = 0
+out = ""
 
-while count <= 4:
-	guess = raw_input()
-	for char in guess:
-		if int(char) == nums[count]:
-			print("*")
-	count += 1
+guess = raw_input()
+guess = [guess]
 
-#if difficulty.lower() = "a" or "easy":
-#	print("Guess the number in as few tries as possible")
-#	num = randint(0, 9)
-#	guess = raw_input()
-#	if int(guess) == num:
-#		score += 1
-#		print("Well done!")
-#	elif int(guess) != num:
-#		print("Sorry!")
-#	else:
-#		print("Wrong input!")
+if ((nums == guess).all()):
+	print("****")
+#if (guess[0][0] in nums):
+#	out = out + "*"
+#elif (guess[0][1] in nums):
+#	out = out + "*"
+#elif (guess[0][2] in nums):
+#	out = out + "*"
+#elif (guess[0][3] in nums):
+#	out = out + "*"
+#else:
+#	print "none"
+#print out
+
+#if ((guess[0][0] in nums) and (guess[0][1] in nums) and (guess[0][2] in nums) and (guess[0][3] in nums)):
+#	print("****")
+#else:
+#	print("none")
+
+#for char in guess:
+#	if ((nums[0][0] in guess) and (nums[0][1] in guess) and (nums[0][2] in guess) and (nums[0][3] in guess)):
+#		print("****")
