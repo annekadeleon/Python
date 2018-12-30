@@ -1,44 +1,67 @@
-print ("---MASTERMIND---")
+from random import randint
+
+length = 4
+
+number = random.randint(range(10), width)
+# print(number)
+
+print("----MASTERMIND----")
+print("Guess the 4 numbers in as few tries as possible")
+print("Type 'x' to exit game")
+
+while True:
+	guess = raw_input(">")
+	if lower(guess) = 'x':
+		print("Come again soon")
+		exit()
+	if len(guess) != length:
+		print("
+
+#########################
+#####not my code#########
+#########################
 
 import random
 
-num1 = random.randint(0, 9)
-num2 = random.randint(0, 9)
-num3 = random.randint(0, 9)
-num4 = random.randint(0, 9)
+width = 4
+USED  = '_'
 
-nums = str(num1) + str(num2) + str(num3) + str(num4)
-stars = ""
-guess = ""
-count = 0
+hidden = random.sample(range(10), width)
+# print(hidden)
 
-print nums
+while True:
 
-print("Guess the 4 numbers in as few tries possible")
+	inp = input("your guess ({} digits):".format(width))
+	if inp == 'x':
+		print("Bye")
+		exit()
+	if len(inp) != width:
+		print("We need exactly {} characters".format(width))
+		continue
 
-guess = raw_input()
+	guess = list(map(int, inp))
+	# print(guess)
 
-while count < 4:
-	if guess[0] == nums[count]:
-		stars = stars + "*"
-		count += 1
+	if hidden == guess:
+		print("Match!")
+		break
 
-count = 0
-while count < 4:
-	if guess[1] == nums[count]:
-		stars = stars + "*"
-		count += 1
+	my_hidden = hidden[:]
+	my_guess  = guess[:]
 
-count = 0
-while count < 4:
-	if guess[2] == nums[count]:
-		stars = stars + "*"
-		count += 1
+	result = ''
+	for i in range(width):
+		if my_hidden[i] == my_guess[i]:
+			result  += '*'
+			my_hidden[i] = USED
+			my_guess[i] = USED
+	for i in range(width):
+		if my_guess[i] == USED:
+			continue
+		if my_guess[i] in my_hidden:
+			loc = my_hidden.index(my_guess[i])
+			my_hidden[loc] = USED
+			guess[i] = USED
+			result += '+'
 
-count = 0
-while count < 4:
-	if guess[3] == nums[count]:
-		stars = stars + "*"
-		count += 1
-
-print stars
+	print(''.join(result))
