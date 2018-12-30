@@ -10,43 +10,35 @@ num4 = random.randint(0, 9)
 nums = str(num1) + str(num2) + str(num3) + str(num4)
 stars = ""
 guess = ""
+count = 0
 
 print nums
 
 print("Guess the 4 numbers in as few tries possible")
 
-guess = raw_input(">")
+guess = raw_input()
 
-while stars != "****":
-	for num in guess:
-		if num == guess[0]:
-			stars = stars + "*"
-		elif num == guess[1]:
-			stars = stars + "*"
-		elif num == guess[2]:
-			stars = stars + "*"
-		elif num == guess[3]:
-			stars = stars + "*"
-		else:
-			print("wrong")
-	print stars
+while count < 4:
+	if guess[0] == nums[count]:
+		stars = stars + "*"
+		count += 1
 
+count = 0
+while count < 4:
+	if guess[1] == nums[count]:
+		stars = stars + "*"
+		count += 1
 
-#while stars != "****":
-#	guess = raw_input(">")
-#	if (nums[0]in guess)
-#	elif nums[0] in guess:
-#		stars = stars + "*"
-#		print "stars: " + stars
-#	elif nums[1] in guess:
-#		stars = stars + "*"
-#		print "stars: " + stars
-#		print stars
-#	elif nums[2] in guess:
-#		stars = stars + "*"
-#		print "stars: " + stars
-#	elif nums[3] in guess:
-#		stars = stars + "*"
-#		print "stars: " + stars
-#	else:
-#		print "try again"#
+count = 0
+while count < 4:
+	if guess[2] == nums[count]:
+		stars = stars + "*"
+		count += 1
+
+count = 0
+while count < 4:
+	if guess[3] == nums[count]:
+		stars = stars + "*"
+		count += 1
+
+print stars
