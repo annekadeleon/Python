@@ -9,11 +9,10 @@ num4 = random.randint(0, 9)
 
 nums = [num1, num2, num3, num4]
 tries = 0
-count = 0
 
 #print nums
 
-print("Guess the 4 numbers in as few tries possible")
+print("Guess the 4 numbers in as few tries possible. Numbers could be used twice.")
 
 while True:
 	stars = ""
