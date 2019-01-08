@@ -1,17 +1,16 @@
-print ("---MASTERMIND---")
+from random import randint
 
-import random
-
-num1 = random.randint(0, 9)
-num2 = random.randint(0, 9)
-num3 = random.randint(0, 9)
-num4 = random.randint(0, 9)
+num1 = randint(0, 9)
+num2 = randint(0, 9)
+num3 = randint(0, 9)
+num4 = randint(0, 9)
 
 nums = [num1, num2, num3, num4]
 tries = 0
 
 #print nums
 
+print ("---MASTERMIND---")
 print("Guess the 4 numbers in as few tries possible. Numbers could be used twice.")
 
 while True:
