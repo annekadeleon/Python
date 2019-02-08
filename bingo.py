@@ -1,3 +1,5 @@
+#not done
+
 from random import randint
 
 chosen = []
