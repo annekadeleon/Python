@@ -17,8 +17,6 @@ binary_to_hex = {
 "1111" : "F"
 }
 
-#binaries = [1, 2, 4, 8, 16, 32, 64, 128, 256]
-
 RGB = []
 while len(RGB) != 3:
 	for letter in "RGB":
